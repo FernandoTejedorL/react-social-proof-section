@@ -1,5 +1,7 @@
+import { StyledProfileContainer } from './profileContainer.styles';
+
 const ProfileContainer = ({ children }) => {
-	return <div>{children}</div>;
+	return <StyledProfileContainer>{children}</StyledProfileContainer>;
 };
 
 export default ProfileContainer;

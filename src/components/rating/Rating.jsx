@@ -1,13 +1,17 @@
-const Rating = ({ rating }) => {
+import { StyledCritic, StyledRating, StyledStars } from './rating.styles';
+
+const Rating = ({ rating, alignSelf }) => {
 	return (
-		<div>
-			<img src='./assets/images/icon-star.svg' alt='rating-star' />
-			<img src='./assets/images/icon-star.svg' alt='rating-star' />
-			<img src='./assets/images/icon-star.svg' alt='rating-star' />
-			<img src='./assets/images/icon-star.svg' alt='rating-star' />
-			<img src='./assets/images/icon-star.svg' alt='rating-star' />
-			<span>{rating}</span>
-		</div>
+		<StyledRating $selfAlign={alignSelf}>
+			<StyledStars>
+				<img src='./assets/images/icon-star.svg' alt='rating-star' />
+				<img src='./assets/images/icon-star.svg' alt='rating-star' />
+				<img src='./assets/images/icon-star.svg' alt='rating-star' />
+				<img src='./assets/images/icon-star.svg' alt='rating-star' />
+				<img src='./assets/images/icon-star.svg' alt='rating-star' />
+			</StyledStars>
+			<StyledCritic>{rating}</StyledCritic>
+		</StyledRating>
 	);
 };
 

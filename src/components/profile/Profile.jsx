@@ -1,15 +1,25 @@
-const Profile = ({ src, name, comment }) => {
+import {
+	StyledImage,
+	StyledName,
+	StyledPerson,
+	StyledProfile,
+	StyledText
+} from './profile.styles';
+
+const Profile = ({ url, name, comment, alignSelf }) => {
 	return (
-		<div>
-			<div>
-				<img src={src} alt='' />
-				<div>
-					<span>{name}</span>
-					<span>Verified Buyer</span>
-				</div>
-			</div>
+		<StyledProfile $alignSelf={alignSelf}>
+			<StyledPerson>
+				<StyledImage src={url} alt='' />
+				<StyledName>
+					<StyledText $fontWeight={'700'}>{name}</StyledText>
+					<StyledText $colorText={'#EE69A4'} $fontWeight={'400'}>
+						Verified Buyer
+					</StyledText>
+				</StyledName>
+			</StyledPerson>
 			<div>{comment}</div>
-		</div>
+		</StyledProfile>
 	);
 };
 

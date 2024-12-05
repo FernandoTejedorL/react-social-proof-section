@@ -1,5 +1,7 @@
+import { StyledRatingsContainer } from './ratingsContainer.styles';
+
 const RatingsContainer = ({ children }) => {
-	return <div>{children}</div>;
+	return <StyledRatingsContainer>{children}</StyledRatingsContainer>;
 };
 
 export default RatingsContainer;
