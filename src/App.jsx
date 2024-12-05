@@ -1,14 +1,25 @@
-import Button from './components/button/Button';
-import { GlobalStyles } from './styles/GlobalStyles';
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+import Profile from './components/profile/Profile';
+import ProfileContainer from './components/profileContainer/ProfileContainer';
+import Rating from './components/rating/Rating';
+import RatingsContainer from './components/ratingsContainer/RatingsContainer';
+import { RATINGS_INFO } from './constants/ratings-info';
+//import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
 	return (
-		<div>
-			<GlobalStyles />
-			<h1>Curso de React</h1>
-			<Button color='steelblue'>Click Me!</Button>
-			<Button color='#f0f'>Click Me!</Button>
-		</div>
+		<Main>
+			<Header />
+			<RatingsContainer>
+				{RATINGS_INFO.map(rating => (
+					<Rating key={rating.id} {...rating} />
+				))}
+			</RatingsContainer>
+			<ProfileContainer>
+				<Profile />
+			</ProfileContainer>
+		</Main>
 	);
 };
 
